@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package cardtrick;
+import java.util.Random;
 
 /**
  *
@@ -13,9 +14,11 @@ public class Card
 {
     private int numbers; //encapsulate it getters and setters
     private String suit;
+    private int max = 10;
+    private int min = 1;
     
     public static final String[] SUITS = {"diamonds","spades","clubs","hearts"};
-
+    Random r = new Random();
     /**
      * @return the numbers
      */
@@ -44,5 +47,11 @@ public class Card
         this.suit = suit;
     }
     
+    public int genRanNum(){
+        return (int)Math.floor(Math.random()*(max-min+1)+min);
+    }
     
+    public String genRanStr(){
+        return SUITS[r.nextInt(SUITS.length)];
+    }
 }

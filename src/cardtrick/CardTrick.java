@@ -1,10 +1,11 @@
+//VAN TRONG HIEU NGUYEN//
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package cardtrick;
-
+import java.util.*;
 /** step 1: generate 7 random cards and store in array 
  * 52 deck size: 
  * 2 spades
@@ -22,20 +23,30 @@ public class CardTrick {
     public static void main(String[] args) 
     {
         
-        
-      Card[] magicHand = new Card[7]; //Array of object 
+      Scanner in = new Scanner(System.in);
+      Card[] magicHand = new Card[7]; //Array of object
+      Card c = new Card();
+      System.out.println("The cards are: ");
       for (int i=0;i<magicHand.length;i++)
+      
       {
         // step 1: generate 7 random cards and store in array
-          Card c= new Card();
-          c.setNumbers(2);//random generation for number/use method
-          c.setSuit("suit by random suit generation");
+          
+          c.setNumbers(c.genRanNum());//random generation for number/use method
+          c.setSuit(c.genRanStr());
           magicHand[i]=c; // stores the card object  in array
-        
+          System.out.println(magicHand[i].getNumbers() + " of " + magicHand[i].getSuit());
     }
-      //step 2: take input guess the card 2 spades find in array - print your card is found
-    
-    // step 3 do change in remote repository. hard coded card details card number =2,hearts to find in array
+    System.out.println("Type in the card suit");
+    String suitSelect = in.nextLine();
+    System.out.println("Type in the card number from 1 to 10");
+    int numSelect = in.nextInt();
     }
-    
 }
+    
+      //step 2: take input guess the card 2 spades find in array - print your card is found
+    // step 3 do change in remote repository. hard coded card details card number =2,hearts to find in array
+    
+    
+    
+
