@@ -26,6 +26,7 @@ public class CardTrick {
       Scanner in = new Scanner(System.in);
       Card[] magicHand = new Card[7]; //Array of object
       Card c = new Card();
+      Card luckyCard = new Card();
       System.out.println("The cards are: ");
       for (int i=0;i<magicHand.length;i++)
       
@@ -37,6 +38,8 @@ public class CardTrick {
           magicHand[i]=c; // stores the card object  in array
           System.out.println(magicHand[i].getNumbers() + " of " + magicHand[i].getSuit());
     }
+        luckyCard.setNumbers(2);
+        luckyCard.setSuit("spades");
     System.out.println("Type in the card suit");
     String suitSelect = in.nextLine();
     System.out.println("Type in the card number from 1 to 10");
